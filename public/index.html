@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="icon" href="%= BASE_URL %>favicon.ico">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Rokkett Wallett - Cartera virtual</title>
+    <h1 style="color:blueviolet">ROKKET WALLETT</h1>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <div id="logoSP">
+      <hr>
+      <h1>Bienvenido a Rokkett Wallett</h1>
+    </div>
+    <main>
+      <p>
+        <h3>Para ingresar, debe registrar un usuario...</h3>
+        <h5>Por favor, registre su nombre y apellido y se le generará automaticamente un ID alfanumerico único</h5>
+      </p>
+      <input type="text" placeholder="Nombre">
+      <input type="text" placeholder="Apellido">
+      <button type="submit">Generar ID</button>
+      <script>
+        const { createApp, ref } = Vue
+      
+        createApp({
+          setup() {
+            const message = ref('Hello vue!')
+            return {
+              message
+            }
+          }
+        }).mount('#app')
+      </script>
+      <hr>
+          <div id="app">{{ logo }}</div>
+          <div class="imagen-logo">
+            <img v-bind:src="imagenlogo">
+          </div>
+
+
+          
+          <!-- importar la app -->
+          <script src="app.js"></script>
+          <!--importar la app-->
+          <script>
+            const inicializarApp = app.mount('#app')
+          </script>
+      
+        </body>
+    </main>
 </html>

@@ -8,23 +8,9 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Rokkett Wallett - Cartera virtual</title>
-    <h1 style="color:blueviolet">ROKKETT WALLET</h1>
   </head>
   <body>
-    <div id="logoSP">
-      <hr>
-      <h1>Bienvenido a Rokkett Wallett</h1>
-    </div>
     <main>
-      <p>
-        <h3>Para ingresar, debe registrar un usuario...</h3>
-        <h5>Por favor, registre su nombre y apellido y se le generará automaticamente un ID alfanumerico único</h5>
-      </p>
-     
-      <input type="text" placeholder="Nombre">
-      <input type="text" placeholder="Apellido">
-      <button type="submit">Generar ID</button>
-      <p>25/05</p>
       <script>
         const { createApp, ref } = Vue
       
@@ -37,21 +23,33 @@
           }
         }).mount('#app')
       </script>
-      <hr>
-          <div id="app">{{ logo }}</div>
-          <div class="imagen-logo">
-            <img v-bind:src="imagenlogo">
-          </div>
-
-
-          
-          <!-- importar la app -->
-          <script src="app.js"></script>
-          <!--importar la app-->
-          <script>
-            const inicializarApp = app.mount('#app')
-          </script>
       
+      <div id="app">
+        <h1>{{ logo }}</h1>
+        <div class="imagen-logo">
+          <img v-bind:src="imagenlogo">
+       </div>
+      </div>
+
+      <div>
+        <hr>
+        <h1>Bienvenido a Rokkett Wallett</h1>
+      </div>
+      <p>
+        <h3>Para ingresar, debe registrar un usuario...</h3>
+        <h5>Por favor, registre su nombre y apellido y se le generará automaticamente un ID alfanumerico único</h5>
+      </p>
+     
+      <input type="text" placeholder="Nombre">
+      <input type="text" placeholder="Apellido">
+      <button type="submit">Generar ID</button>
+
+        <!-- importar la app -->
+        <script src="app.js"></script>
+        <!--montar la app-->
+        <script>
+        const appInicializada = app.mount('#app')
+        </script>     
         </body>
     </main>
 </html>

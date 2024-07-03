@@ -11,23 +11,11 @@
   </head>
   <body>
     <main>
-      <script>
-        const { createApp, ref } = Vue
-      
-        createApp({
-          setup() {
-            const message = ref('Hello vue!')
-            return {
-              message
-            }
-          }
-        }).mount('#app')
-      </script>
-      
+
       <div id="app">
         <h1>{{ logo }}</h1>
-        <div class="imagen-logo">
-          <img v-bind:src="imagenlogo">
+        <div>
+          <img v-bind:src="imagenlogo" class="imagen-logo">
        </div>
       </div>
 

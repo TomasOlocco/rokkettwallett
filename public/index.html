@@ -13,24 +13,35 @@
     <main>
 
       <div id="app">
-        <h1>{{ logo }}</h1>
         <div>
+        <h1>{{ logo }}</h1>
           <img v-bind:src="imagenlogo" class="imagen-logo">
-       </div>
-      </div>
-
-      <div>
+        </div>
         <hr>
+
         <h1>Bienvenido a Rokkett Wallett</h1>
-      </div>
-      <p>
-        <h3>Para ingresar, debe registrar un usuario...</h3>
-        <h5>Por favor, registre su nombre y apellido y se le generará automaticamente un ID alfanumerico único</h5>
-      </p>
-     
-      <input type="text" placeholder="Nombre">
-      <input type="text" placeholder="Apellido">
-      <button type="submit">Generar ID</button>
+
+        <p>
+          <h3>Para ingresar, debe registrar un usuario...</h3>
+          <h5>Por favor, registre su nombre y apellido y se le generará automaticamente un ID alfanumerico único</h5>
+        </p>
+
+       <!-- usar LocalStorage-->
+       <form>
+          <input type="text" placeholder="Nombre" id="nombre" v-model="nombre"/>
+        
+          <input type="text" placeholder="Apellido" id="apellido" v-model="apellido" />
+       </form>
+
+       <div class="IdPersonal">ID Generado ({{ idAlf }})
+        <button class="button" @click="generarId">Generar ID</button>
+       </div>
+        <div v-if="submitForm">
+          <p style="color: red;">{{ error }}</p>
+        </div>
+    </div>
+
+        
 
         <!-- importar la app -->
         <script src="app.js"></script>

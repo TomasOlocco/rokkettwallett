@@ -17,3 +17,12 @@ body{
 .imagen-logo{
     width: 40px;
 }
+
+.idGenerado{
+    color: black;
+}
+
+.botonDeshabilitado {
+    background-color: grey;
+    cursor: not-allowed;
+}

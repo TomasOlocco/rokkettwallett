@@ -11,7 +11,6 @@
   </head>
   <body>
     <main>
-
       <div id="app">
         <div>
         <h1>{{ logo }}</h1>
@@ -27,28 +26,27 @@
         </p>
 
        <!-- usar LocalStorage-->
-       <form>
-          <input type="text" placeholder="Nombre" id="nombre" v-model="nombre"/>
-        
-          <input type="text" placeholder="Apellido" id="apellido" v-model="apellido" />
-       </form>
+      <form>
+        <input type="text" placeholder="Nombre" id="nombre" v-model="nombre"/>
+        <input type="text" placeholder="Apellido" id="apellido" v-model="apellido" />
+     </form>
 
-       <div class="IdPersonal">ID Generado ({{ idAlf }})
-        <button class="button" @click="generarId">Generar ID</button>
-       </div>
-        <div v-if="submitForm">
-          <p style="color: red;">{{ error }}</p>
-        </div>
-    </div>
+      <div>ID Generado ({{ idAlf }})
+       <button class="button" @click="generarId(idAlf)">Generar ID</button>
+      </div>
+      <div v-if="submitForm">
+        <p style="color: red;">{{ error }}</p>
+      </div>
 
-        
-
+      <div>
+        <a href="compraventa.html" class="boton-c/v">Comprar y/o vender criptomonedas</a>
         <!-- importar la app -->
-        <script src="app.js"></script>
+       <script src="app.js"></script>
         <!--montar la app-->
-        <script>
+       <script>
         const appInicializada = app.mount('#app')
-        </script>     
-        </body>
+       </script>
+      </div>   
     </main>
+  </body>
 </html>

@@ -3,16 +3,39 @@ const app = Vue.createApp({
         return {
             logo: 'ROKKETT',
             imagenlogo: 'https://png.pngtree.com/png-clipart/20230102/original/pngtree-cartoon-illustration-red-rocket-png-image_8856222.png',
-            idAlf: "",
+            idAlf: '',
             nombre: '',
             apellido: '',
-            error: " "
+            error: ""
         };
     },
   
-    methods: {
+    methods:
+    {
+      axiosBD(){
+        const apiClient = axios.create({
+          baseURL:  'https://laboratorio-36cf.restdb.io/rest/ ',
+          headers: { 'x-apikey': '64a5ccf686d8c5d256ed8fce'}
+        })
+        return apiClient;
+      },
+      mostrarTransacciones(){
+        const apiClient = thus.axiosBD();
+        apiClient.get('')
+        .then(res => {
+        if(res.data.length > 0){
+          this.transacciones = res.data;
+        }
+        else{
+          console.log("No hay transacciones")
+        }
+      })
+      .catch(error =>{
+        console.error(error);
+      });
+    },
       submitForm() {
-        error = "Ingrese su nombre";
+        this.error = "Ingrese su nombre";
       }
     },
 
@@ -22,7 +45,7 @@ const app = Vue.createApp({
           nombre: !String.Empty,
           apellido: !String.Empty
         })
-        this.idAlf = this.nombre + this.apellido + Math.random().toString(36);
+        this.idAlf = this.nombre + this.apellido + Math.random().toString(36).substring(2,9);
       }
-    }
+  }
 });

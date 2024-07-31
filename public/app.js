@@ -4,9 +4,10 @@ const app = Vue.createApp({
             logo: 'ROKKETT',
             imagenlogo: 'https://png.pngtree.com/png-clipart/20230102/original/pngtree-cartoon-illustration-red-rocket-png-image_8856222.png',
             idAlf: '',
-            nombre: '',
-            apellido: '',
-            error: ""
+            nombre: "",
+            apellido: "",
+            errorVacio: "",
+            error: "Algo ocurrió mal"
         };
     },
   
@@ -35,7 +36,8 @@ const app = Vue.createApp({
       });
     },
       submitForm() {
-        this.error = "Ingrese su nombre";
+        this.errorVacio = "Ingrese su nombre";
+        return this.errorVacio;
       }
     },
 
@@ -46,6 +48,10 @@ const app = Vue.createApp({
           apellido: !String.Empty
         })
         this.idAlf = this.nombre + this.apellido + Math.random().toString(36).substring(2,9);
+        else{
+          this.errorVacio = "Ingrese su nombre";
+        }
       }
+      
   }
 });

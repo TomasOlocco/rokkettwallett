@@ -32,10 +32,11 @@
      </form>
 
       <div>ID Generado ({{ idAlf }})
-       <button class="button" @click="generarId(idAlf)">Generar ID</button>
-      </div>
-      <div v-if="submitForm">
-        <p style="color: red;">{{ error }}</p>
+       <button class="button" v-if @click="generarId(idAlf)">Generar ID</button>
+       <p v-else @click="generarId(errorVacio)" style="color: red;"><h3>{{ errorVacio }}<h3></p>
+       <script>
+         localStorage.setItem("idAlf");
+       </script>
       </div>
 
       <div>
